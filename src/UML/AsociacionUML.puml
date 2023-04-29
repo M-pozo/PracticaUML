@@ -1,25 +1,32 @@
 @startuml
 
 class Asociacion {
-
+    + void newLocarion(Localizacion l)
+    + void newEvent(Evento e)
+    + void newPerson(Persona p)
+    + void informEvent(Evento e)
+    + void newLocarion(Miembro m, Evento e)
 }
 class Conferencia {
-
+    - int max_attendees
 }
 class Evento {
-
+    - LocalDate date
+    - String description
+    + void assign(Localizacion l)
 }
 class Localizacion {
-
+    - String description
+    - String address
 }
 class Miembro {
-
+    - String email
 }
 class MiembroJuntaDirectiva {
 
 }
 class Persona {
-
+    - String name
 }
 class ReunionJuntaDirectiva {
 
