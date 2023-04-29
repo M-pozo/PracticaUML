@@ -32,16 +32,16 @@ class ReunionJuntaDirectiva {
 
 }
 
-Asociacion o-- Persona
+Asociacion o-- "0..*" Persona
 Persona <|-- Miembro
-Persona -- Conferencia
+Persona "0..*" -- "0..*" Conferencia : attendsTo
 Miembro <|-- MiembroJuntaDirectiva
-Asociacion o-- Localizacion
-Localizacion -- Evento
-Asociacion o-- Evento
+Asociacion o-- "0..*" Localizacion
+Localizacion "1" -- "0..*" Evento : isLocatedIn
+Asociacion o-- "0..*" Evento
 Evento <|-- Conferencia
 Evento <|-- ReunionJuntaDirectiva
-ReunionJuntaDirectiva -- MiembroJuntaDirectiva
-Evento -- Miembro
+ReunionJuntaDirectiva "0..*" -- "0..*" MiembroJuntaDirectiva : attendsTo
+Evento "0..*" -- "0..*" Miembro : attendsTo
 
 @enduml
