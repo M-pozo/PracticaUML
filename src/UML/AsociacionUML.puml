@@ -24,4 +24,17 @@ class Persona {
 class ReunionJuntaDirectiva {
 
 }
+
+Asociacion o-- Persona
+Persona <|-- Miembro
+Persona -- Conferencia
+Miembro <|-- MiembroJuntaDirectiva
+Asociacion o-- Localizacion
+Localizacion -- Evento
+Asociacion o-- Evento
+Evento <|-- Conferencia
+Evento <|-- ReunionJuntaDirectiva
+ReunionJuntaDirectiva -- MiembroJuntaDirectiva
+Evento -- Miembro
+
 @enduml
